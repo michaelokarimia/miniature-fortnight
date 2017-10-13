@@ -8,6 +8,12 @@
             this.Next = null;
         }
 
+        public ListNode(object value, ListNode next) 
+        {
+            this.Value = value;
+            Next = next;
+        }
+
         public object Value { get; }
         public ListNode Next { get; set; }
     }
