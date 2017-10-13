@@ -9,7 +9,7 @@
         }
 
         public object Value { get; }
-        public ListNode Next { get; }
+        public ListNode Next { get; set; }
     }
 }
 

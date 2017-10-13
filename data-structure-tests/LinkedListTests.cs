@@ -16,5 +16,15 @@ namespace data_structure_tests
 
             Assert.IsNull(result);
         }
+
+        [Test]
+        public void AppendsNodeToList()
+        {
+            var subject = new LinkedList();
+
+            subject.Append(10);
+
+            Assert.That(subject.Size, Is.EqualTo(1)); 
+        }
     }
 }
