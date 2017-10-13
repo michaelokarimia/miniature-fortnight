@@ -38,7 +38,7 @@ namespace data_structure_tests
 
             Assert.That(subject.Size, Is.EqualTo(2));
 
-            subject.Remove(1);
+            subject.Remove(new ListNode(1));
 
             Assert.That(subject.Size, Is.EqualTo(1));
 
@@ -55,10 +55,14 @@ namespace data_structure_tests
 
             Assert.That(subject.Size, Is.EqualTo(3));
 
-            subject.Remove(2);
+            subject.Remove(new ListNode(2));
 
             Assert.That(subject.Size, Is.EqualTo(2));
 
+            Console.WriteLine(subject.ToString());
+
         }
+
+
     }
 }

@@ -2,19 +2,19 @@
 {
     public class ListNode
     {
-        public ListNode(object value)
+        public ListNode(int value)
         {
             this.Value = value;
             this.Next = null;
         }
 
-        public ListNode(object value, ListNode next) 
+        public ListNode(int value, ListNode next) 
         {
             this.Value = value;
             Next = next;
         }
 
-        public object Value { get; }
+        public int Value { get; }
         public ListNode Next { get; set; }
     }
 }
