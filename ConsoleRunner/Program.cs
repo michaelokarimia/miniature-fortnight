@@ -7,15 +7,23 @@ namespace ConsoleRunner
     {
         static void Main(string[] args)
         {
-            var start = new ListNode(1);
+            var linkedList = new LinkedList();
 
-            start.AddNext(2).AddNext(3).AddNext(4).AddNext(5);
+            var ten = linkedList.Append(10);
+            linkedList.Append(11);
+            var twelve = linkedList.Append(12);
+            linkedList.Append(13);
+            linkedList.Append(14);
 
-            PrintNodes(start);
-            
-            
-           
-                        
+
+            Console.WriteLine(linkedList.ToString());
+
+            linkedList.InsertAt(twelve, 100);
+            Console.WriteLine(linkedList.ToString());
+
+            linkedList.InsertAt(ten, -1);
+            Console.WriteLine(linkedList.ToString());
+
 
 
 
