@@ -89,7 +89,7 @@ namespace data_structures
         public Node InsertAt(Node node, int value)
         {
             // 1 -><- 2 -><- 8 -><-3
-            var newNode = new Node(value, node.Next, node);
+            var newNode = new Node(value, node.Next, node.Previous);
 
             node.Next.Previous = newNode;
 

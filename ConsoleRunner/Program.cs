@@ -7,7 +7,7 @@ namespace ConsoleRunner
     {
         static void Main(string[] args)
         {
-            var linkedList = new LinkedList();
+            var linkedList = new DoubleyLinkedList();
 
             var ten = linkedList.Append(10);
             linkedList.Append(11);
@@ -24,8 +24,11 @@ namespace ConsoleRunner
             linkedList.InsertAt(ten, -1);
             Console.WriteLine(linkedList.ToString());
 
+            linkedList.Remove(ten);
+            Console.WriteLine(linkedList.ToString());
 
-
+            linkedList.Remove(twelve);
+            Console.WriteLine(linkedList.ToString());
 
             Console.ReadKey();
         }
