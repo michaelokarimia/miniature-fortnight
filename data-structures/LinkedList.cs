@@ -42,10 +42,10 @@ namespace data_structures
             return insertNode;
         }
 
-          public void Remove(int itemToRemove)
+          public void Remove(ListNode itemToRemove)
         {
             //check if head value is the node to remove
-            if (this.Head.Value.Equals(itemToRemove))
+            if (this.Head.Value.Equals(itemToRemove.Value))
             {
                 this.Head = Head.Next;
             }
@@ -56,11 +56,15 @@ namespace data_structures
                 this.Traverse((current, previous) =>
                 {
 
-                    if (current.Value == itemToRemove)
+                    if (current.Value == itemToRemove.Value)
                     {
                         //Match found, so remove it
                         //set previous node's Next reference to point to the next node instead of the current node 
-                        previous.Next = current.Next;
+
+                        if (previous != null)
+                        {
+                            previous.Next = current.Next;
+                        }
                         return true;
                     }
                     return false;
