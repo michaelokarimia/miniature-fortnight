@@ -7,19 +7,29 @@ namespace ConsoleRunner
     {
         static void Main(string[] args)
         {
+            var start = new ListNode(1);
 
-            LinkedList list = new LinkedList();
+            start.AddNext(2).AddNext(3).AddNext(4).AddNext(5);
 
-            list.Append(1);
-            list.Append(2);
-            list.Append(3);
+            PrintNodes(start);
+            
+            
+           
+                        
 
 
-            Console.WriteLine(list.ToString());
-            list.Remove(2);
-            Console.WriteLine(list.ToString());
 
             Console.ReadKey();
+        }
+
+
+        public static void PrintNodes(ListNode current)
+        {
+            while (current != null)
+            {
+                Console.WriteLine("Value: {0}", current.Value);
+                current = current.Next;
+            }
         }
     }
 }

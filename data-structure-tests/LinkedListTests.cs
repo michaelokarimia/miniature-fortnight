@@ -60,6 +60,21 @@ namespace data_structure_tests
 
         }
 
+        [Test]
+        public void InsertsAtMiddle()
+        {
+            var subject = new LinkedList();
+
+            subject.Append(1);
+            var two = subject.Append(2);
+            subject.Append(3);
+
+            subject.InsertAt(two, 10);
+
+            Assert.That(subject.ToString(), Is.EqualTo("Index: 0, Value: 1\r\nIndex: 1, Value: 2\r\nIndex: 2, Value: 10\r\nIndex: 3, Value: 3\r\n"));
+
+        }
+
 
     }
 }

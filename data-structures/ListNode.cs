@@ -16,6 +16,13 @@
 
         public int Value { get; }
         public ListNode Next { get; set; }
+
+        public ListNode AddNext(int val)
+        {
+            this.Next = new ListNode(val);
+            return this.Next;
+        }
+
     }
 }
 

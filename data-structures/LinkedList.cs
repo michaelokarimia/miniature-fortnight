@@ -23,7 +23,7 @@ namespace data_structures
             return last;
         }
 
-        public void Append(int value)
+        public ListNode Append(int value)
         {
             var insertNode = new ListNode(value);      
             
@@ -38,9 +38,11 @@ namespace data_structures
                 var lastNode = this.Traverse(null);
                 lastNode.Next = insertNode;
             }
+
+            return insertNode;
         }
 
-        public void Remove(int itemToRemove)
+          public void Remove(int itemToRemove)
         {
             //check if head value is the node to remove
             if (this.Head.Value.Equals(itemToRemove))
