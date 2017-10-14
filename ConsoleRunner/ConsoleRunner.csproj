@@ -48,9 +48,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\data-structures\data-structures.csproj">
+    <ProjectReference Include="..\data-structures\data_structures.csproj">
       <Project>{634FC45A-3112-47E4-B207-C957701FF325}</Project>
-      <Name>data-structures</Name>
+      <Name>data_structures</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
