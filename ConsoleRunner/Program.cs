@@ -1,9 +1,5 @@
 ﻿using data_structures;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleRunner
 {
@@ -20,6 +16,9 @@ namespace ConsoleRunner
 
 
             Console.WriteLine(list.ToString());
+            list.Remove(2);
+            Console.WriteLine(list.ToString());
+
             Console.ReadKey();
         }
     }

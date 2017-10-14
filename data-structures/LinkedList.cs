@@ -6,12 +6,6 @@ namespace data_structures
     public class LinkedList
     {
         private ListNode Head;
-        public int Size;
-
-        public LinkedList()
-        {
-            Size = 0;
-        }
 
         public ListNode Traverse(Func<ListNode, ListNode,bool> expression)
         {
@@ -44,15 +38,12 @@ namespace data_structures
                 var lastNode = this.Traverse(null);
                 lastNode.Next = insertNode;
             }
-
-            Size++;
-
         }
 
-        public void Remove(ListNode node)
+        public void Remove(int itemToRemove)
         {
             //check if head value is the node to remove
-            if (this.Head.Value.Equals(node.Value))
+            if (this.Head.Value.Equals(itemToRemove))
             {
                 this.Head = Head.Next;
             }
@@ -60,19 +51,20 @@ namespace data_structures
             {
                 //traverse through the list until you find the node with your value to remove
 
-                this.Traverse((n, last) =>
+                this.Traverse((current, previous) =>
                 {
 
-                    if (n.Value == node.Value)
+                    if (current.Value == itemToRemove)
                     {
-                        last.Next = n.Next;
+                        //Match found, so remove it
+                        //set previous node's Next reference to point to the next node instead of the current node 
+                        previous.Next = current.Next;
                         return true;
                     }
                     return false;
 
                 });
             }
-            Size--;
         }
 
         public ListNode InsertAt(ListNode node, int value)
@@ -95,7 +87,7 @@ namespace data_structures
 
             while (current != null)
             {
-                sb.AppendLine(string.Format("Index:{0} value: {1}", counter, current.Value));
+                sb.AppendLine(string.Format("Index: {0}, Value: {1}", counter, current.Value));
                 current = current.Next;
                 counter++;
             }
