@@ -5,7 +5,7 @@ namespace data_structures
 {
     public class LinkedList
     {
-        private ListNode Head;
+        public ListNode Head { get; private set; }
 
         public ListNode Traverse(Func<ListNode, ListNode,bool> expression)
         {
