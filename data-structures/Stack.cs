@@ -20,7 +20,7 @@
 
         public int? Peek()
         {
-            var matchingNode = list.Traverse((n, m) => n.Next == null);
+            var matchingNode = list.Traverse((n) => n.Next == null);
             if (matchingNode != null)
                 return matchingNode.Value;
             else

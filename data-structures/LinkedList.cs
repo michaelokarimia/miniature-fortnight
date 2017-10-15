@@ -7,7 +7,24 @@ namespace data_structures
     {
         public ListNode Head { get; private set; }
 
-        public ListNode Traverse(Func<ListNode, ListNode,bool> expression)
+        public ListNode Traverse(Func<ListNode,bool> expression)
+        {
+            var current = this.Head;
+            ListNode last = null;
+
+            while (current != null)
+            {
+                var result = expression(current);
+                last = current;
+                current = current.Next;
+                if(result)
+                { break; }
+            }
+
+            return last;
+        }
+
+        public ListNode Traverse(Func<ListNode,ListNode, bool> expression)
         {
             var current = this.Head;
             ListNode last = null;
@@ -17,7 +34,7 @@ namespace data_structures
                 var result = expression(current, last);
                 last = current;
                 current = current.Next;
-                if(result)
+                if (result)
                 { break; }
             }
 
@@ -36,7 +53,7 @@ namespace data_structures
             else
             {
                 //traverse list to get to the end, and insert new node there
-                var lastNode = this.Traverse((n,m) => n.Next == null);
+                var lastNode = this.Traverse((n) => n.Next == null);
                 lastNode.Next = insertNode;
             }
 
