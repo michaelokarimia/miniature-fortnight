@@ -75,6 +75,22 @@ namespace data_structure_tests
 
         }
 
+        [Test]
+        public void CanRemoveATailNode()
+        {
+            var subject = new LinkedList();
+
+            var one = subject.Append(1);
+            var two = subject.Append(2);
+
+            Assert.That(subject.ToString(), Is.EqualTo("Index: 0, Value: 1\r\nIndex: 1, Value: 2\r\n"));
+
+            subject.Remove(two);
+
+            Assert.That(subject.ToString(), Is.EqualTo("Index: 0, Value: 1\r\n"));
+
+        }
+
 
     }
 }

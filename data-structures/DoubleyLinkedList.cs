@@ -24,14 +24,14 @@ namespace data_structures
     {
         private Node Head;
 
-        public Node Traverse(Func<Node, Node,bool> expression)
+        public Node Traverse(Func<Node,bool> expression)
         {
             var current = this.Head;
             Node last = null;
 
             while (current != null)
             {
-                var result = expression(current, last);
+                var result = expression(current);
                 last = current;
                 current = current.Next;
                 if(result)
@@ -54,7 +54,7 @@ namespace data_structures
             else
             {
                 //traverse list to get to the end, and insert new node there
-                var lastNode = this.Traverse((n,m) => n.Next == null);
+                var lastNode = this.Traverse((n) => n.Next == null);
                 insertNode.Previous = lastNode;
                 lastNode.Next = insertNode;
             }

@@ -24,23 +24,6 @@ namespace data_structures
             return last;
         }
 
-        public ListNode Traverse(Func<ListNode,ListNode, bool> expression)
-        {
-            var current = this.Head;
-            ListNode last = null;
-
-            while (current != null)
-            {
-                var result = expression(current, last);
-                last = current;
-                current = current.Next;
-                if (result)
-                { break; }
-            }
-
-            return last;
-        }
-
         public ListNode Append(int value)
         {
             var insertNode = new ListNode(value);      
@@ -71,23 +54,15 @@ namespace data_structures
             {
                 //traverse through the list until you find the node with your value to remove
 
-                this.Traverse((current, previous) =>
+                var current = this.Traverse((n) => n.Next.Value == itemToRemove.Value);
+
+                if (current != null)
                 {
+                    //we have found the node
+                    current.Next = current.Next.Next;
 
-                    if (current.Value == itemToRemove.Value)
-                    {
-                        //Match found, so remove it
-                        //set previous node's Next reference to point to the next node instead of the current node 
+                }
 
-                        if (previous != null)
-                        {
-                            previous.Next = current.Next;
-                        }
-                        return true;
-                    }
-                    return false;
-
-                });
             }
         }
 

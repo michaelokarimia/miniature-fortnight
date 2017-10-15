@@ -11,7 +11,7 @@ namespace data_structure_tests
         {
             var subject = new DoubleyLinkedList();
 
-            var result = subject.Traverse((n,m) =>  n == null );
+            var result = subject.Traverse((n) =>  n.Next == null );
 
             Assert.IsNull(result);
         }
@@ -42,6 +42,23 @@ namespace data_structure_tests
             Assert.That(subject.ToString(), Is.EqualTo("Index: 0, Value: 2\r\n"));
 
         }
+
+        [Test]
+        public void CanRemoveATailNode()
+        {
+            var subject = new DoubleyLinkedList();
+
+            var one = subject.Append(1);
+            var two = subject.Append(2);
+
+            Assert.That(subject.ToString(), Is.EqualTo("Index: 0, Value: 1\r\nIndex: 1, Value: 2\r\n"));
+
+            subject.Remove(two);
+
+            Assert.That(subject.ToString(), Is.EqualTo("Index: 0, Value: 1\r\n"));
+
+        }
+
 
         [Test]
         public void CanRemoveMiddleNode()

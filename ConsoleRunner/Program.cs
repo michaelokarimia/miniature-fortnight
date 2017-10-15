@@ -7,7 +7,7 @@ namespace ConsoleRunner
     {
         static void Main(string[] args)
         {
-            var linkedList = new DoubleyLinkedList();
+            var linkedList = new LinkedList();
 
             var ten = linkedList.Append(10);
             linkedList.Append(11);

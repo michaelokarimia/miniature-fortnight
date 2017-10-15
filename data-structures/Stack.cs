@@ -29,7 +29,7 @@
 
         public int Pop()
         {
-            var last = list.Traverse((n,m) => n.Next == null);
+            var last = list.Traverse((n) => n.Next == null);
 
             var lastValue = last.Value;
 
