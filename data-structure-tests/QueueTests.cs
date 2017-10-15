@@ -29,5 +29,34 @@ namespace data_structure_tests
             Assert.That(q.Dequeue(), Is.EqualTo(1));
             Assert.That(q.Dequeue(), Is.EqualTo(2));
         }
+
+
+        [TestFixture]
+        public class QueueWithInternalStacksTest
+        {
+            [Test]
+            public void QueueEnqueueAddsItem()
+            {
+                var queue = new QueueWithInternalStacks();
+
+                queue.Enqueue(1);
+
+                Assert.That(queue.Peek(), Is.EqualTo(1));
+            }
+
+            [Test]
+            public void DequeueRemovesItem()
+            {
+
+                var q = new QueueWithInternalStacks();
+
+                q.Enqueue(1);
+                q.Enqueue(2);
+                q.Enqueue(3);
+
+                Assert.That(q.Dequeue(), Is.EqualTo(1));
+                Assert.That(q.Dequeue(), Is.EqualTo(2));
+            }
+        }
     }
 }
