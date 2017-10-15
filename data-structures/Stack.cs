@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace data_structures
+﻿namespace data_structures
 {
     public class Stack
     {
@@ -22,14 +18,18 @@ namespace data_structures
             count++;
         }
 
-        public int Peek()
+        public int? Peek()
         {
-            return list.Traverse(null).Value;
+            var matchingNode = list.Traverse((n, m) => n.Next == null);
+            if (matchingNode != null)
+                return matchingNode.Value;
+            else
+                return null;
         }
 
         public int Pop()
         {
-            var last = list.Traverse(null);
+            var last = list.Traverse((n,m) => n.Next == null);
 
             var lastValue = last.Value;
 

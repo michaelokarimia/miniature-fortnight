@@ -11,7 +11,7 @@ namespace data_structure_tests
         {
             var subject = new DoubleyLinkedList();
 
-            var result = subject.Traverse(null);
+            var result = subject.Traverse((n,m) =>  n == null );
 
             Assert.IsNull(result);
         }

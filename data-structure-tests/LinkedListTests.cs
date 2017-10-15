@@ -11,7 +11,7 @@ namespace data_structure_tests
         {
             var subject = new LinkedList();
 
-            var result = subject.Traverse(null);
+            var result = subject.Traverse((node,m) => node.Next == null);
 
             Assert.IsNull(result);
         }

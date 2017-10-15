@@ -34,7 +34,7 @@ namespace data_structure_tests
         [TestFixture]
         public class QueueWithInternalStacksTest
         {
-            [Test]
+            //[Test]
             public void QueueEnqueueAddsItem()
             {
                 var queue = new QueueWithInternalStacks();
@@ -44,7 +44,7 @@ namespace data_structure_tests
                 Assert.That(queue.Peek(), Is.EqualTo(1));
             }
 
-            [Test]
+            //[Test]
             public void DequeueRemovesItem()
             {
 

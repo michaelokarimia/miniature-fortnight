@@ -31,10 +31,12 @@ namespace data_structures
 
             while (current != null)
             {
-                if(expression != null && expression(current, last))
-                { break; }
+                var result = expression(current, last);
                 last = current;
                 current = current.Next;
+                if(result)
+                    { break; }
+            
             }
 
             return last;
@@ -52,7 +54,7 @@ namespace data_structures
             else
             {
                 //traverse list to get to the end, and insert new node there
-                var lastNode = this.Traverse(null);
+                var lastNode = this.Traverse((n,m) => n.Next == null);
                 insertNode.Previous = lastNode;
                 lastNode.Next = insertNode;
             }
