@@ -13,14 +13,19 @@
             public BinaryTree RightTree { get; private set; }
             public int Value { get => _value; private set => _value = value; }
 
-            public void AddLeft(int value)
+            public BinaryTree AddLeft(int value)
             {
-                LeftTree = new BinaryTree(value);
+                var newTree = new BinaryTree(value);
+                LeftTree = newTree;
+                return newTree;
+                
             }
 
-            public void AddRight(int value)
+            public BinaryTree AddRight(int value)
             {
-                RightTree = new BinaryTree(value);
+                var newTree = new BinaryTree(value);
+                RightTree = newTree;
+                return newTree;
             }
         }
     }
