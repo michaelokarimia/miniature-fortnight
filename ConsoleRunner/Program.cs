@@ -7,6 +7,28 @@ namespace ConsoleRunner
     {
         static void Main(string[] args)
         {
+
+            var A = new Vertex("A");
+            var B = new Vertex("B");
+            var C = new Vertex("C");
+            var D = new Vertex("D");
+
+            A.To(B, 4);
+            B.To(C, 5);
+            C.To(D, 10);
+            D.To(A, 9);
+
+
+            A.Traverse(A);
+
+
+
+            Console.ReadKey();
+
+        }
+
+        public static void TestLinkedLists()
+        {
             var linkedList = new LinkedList();
 
             var ten = linkedList.Append(10);
