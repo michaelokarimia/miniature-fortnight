@@ -52,6 +52,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryTreeTests.cs" />
     <Compile Include="DoubleyLinkedListTests.cs" />
     <Compile Include="HashTests.cs" />
     <Compile Include="LinkedListTests.cs" />
