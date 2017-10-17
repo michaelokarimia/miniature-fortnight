@@ -35,14 +35,14 @@ namespace data_structures
 
         public int Dequeue()
         {
-            var tailItem = this.Peek();
+            var headValue = this.Peek();
 
-            if (tailItem.HasValue)
+            if (headValue.HasValue)
             {
                 count--;
                 list.Remove(list.Head);
             }
-            return tailItem.Value;
+            return headValue.Value;
         }
     }
 }
