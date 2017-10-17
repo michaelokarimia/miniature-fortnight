@@ -28,5 +28,31 @@ namespace data_structure_tests
             Assert.That(Hash.DuplicateDays(days), Is.EqualTo(1));
 
         }
+
+        [Test]
+        public void ContainsReturnsTrueIfAlreadyHasItem()
+        {
+            var firstItem = 1;
+
+            var myhash = new Hash();
+            myhash.Add(firstItem);
+
+            Assert.True(myhash.Contains(firstItem));
+
+        }
+
+        [Test]
+        public void ContainsReturnsFalseIfItemNotInHash()
+        {
+            var firstItem = 1;
+
+            var myhash = new Hash();
+
+            Assert.False(myhash.Contains(firstItem));
+
+
+
+        }
+
     }
 }
