@@ -14,30 +14,34 @@
 
         public void Push(int value)
         {
-            list.Append(value);
             count++;
+            //empty list, add a new node
+            if (list.Head == null)
+            {
+                list.Head = new ListNode(value);
+            }
+            else
+            {
+                //replace head with the new node and point its next value to the new node
+                var currentHead = list.Head;
+                list.Head = new ListNode(value);
+                list.Head.Next = currentHead;
+            }
+            
         }
 
         public int? Peek()
         {
-            var matchingNode = list.Traverse((n) => n.Next == null);
-            if (matchingNode != null)
-                return matchingNode.Value;
-            else
-                return null;
+            return list.Head?.Value;
         }
 
-        public int Pop()
+        public int? Pop()
         {
-            var last = list.Traverse((n) => n.Next == null);
+            var headValue = list.Head?.Value;
 
-            var lastValue = last.Value;
+            list.Head = list.Head?.Next;
 
-            list.Remove(last);
-
-            count--;
-
-            return lastValue;
+            return headValue;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace data_structures
         {
             if (rearStack.Peek() != null)
             {
-                frontStack.Push(rearStack.Pop());
+                frontStack.Push(rearStack.Pop().Value);
             }
             rearStack.Push(v);
         }
